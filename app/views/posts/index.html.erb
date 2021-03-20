@@ -12,7 +12,11 @@
           <% end %>
         </div>
 
-        <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+        <%# ==========ここから編集する========== %>
+        <%= link_to(post_path(post)) do %>
+          <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+        <% end %>
+        <%# ==========ここまで編集する========== %>
 
         <div class="card-body">
           <div class="row parts">
