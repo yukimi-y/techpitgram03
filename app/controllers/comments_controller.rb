@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    @comment = Comment.new(coment_params)
+    @comment = Comment.new(comment_params)
     @post = @comment.post
     if @comment.save
       respond_to :js
@@ -24,6 +24,6 @@ class CommentsController < ApplicationController
 
   private
     def comment_params
-      params.require(:comment).permit(:user_id, :post_id, :comment)
+      params.required(:comment).permit(:user_id, :post_id, :comment)
     end
 end
