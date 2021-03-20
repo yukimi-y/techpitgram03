@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
-  belogs_to :user
-  hasy_many :photos, dependent: :destroy
+  belongs_to :user
+  has_many :photos, dependent: :destroy
+
+  accepts_nested_attributes_for :photos
 end
